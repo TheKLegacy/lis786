@@ -13,7 +13,7 @@ nav ul li {
     float: left;
 }
 
-nav ul li {
+nav ul a {
     display: block;
     text-align: center;
     padding: 14px 16px;
