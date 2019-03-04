@@ -20,3 +20,33 @@ nav ul {
   padding: 0; 
   list-style-type: none;
 }
+
+.card .card-footer {
+  text-align: center;
+}
+
+.card .card-footer .btn{
+  width: 12em;
+}
+
+.card {
+  margin: 20px;
+  height: 35em;
+  width: 320px; 
+}
+
+.card .card-body{
+  width: 320px;
+}
+
+/*Does this work?*/ 
+.card .card-body .card-text{
+  width: 100%;
+  height: auto;
+}
+
+.flex-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
