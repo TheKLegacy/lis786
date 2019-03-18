@@ -44,3 +44,7 @@ nav ul li a {
 .active {
   font-weight: bold;
 }
+
+.navbar-nav .nav-item .nav-link {
+  width: 140px;
+}
