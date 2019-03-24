@@ -2,6 +2,21 @@
 title: Projects
 layout: default
 ---
-Projects
 
-<!--Will be created over spring break along with template for individual project pages-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8">
+            <h1>Browse my projects below:</h1>
+
+            {% for project in site.projects %}
+                <br>
+                <div class="container">
+                    <h3>{{project.title}}</h3>
+                    <img class="img-thumbnail rounded" src="assets/imgs/{{project.ImageName}}">
+                    <p>{{project.content}}</p>
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
