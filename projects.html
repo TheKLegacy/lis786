@@ -3,19 +3,60 @@ title: Projects
 layout: default
 ---
 
-<div class="container">
+<div class="container" id="">
     <div class="row">
-        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-3 col-md-2" id="filter">
+            <div class="btn-group-vertical mr-2" role="group" aria-label="First group">
+                <button onclick="sortAlph()" type="button" class="btn btn-secondary">Alpha</button> 
+                <button onclick="sortDate()" type="button" class="btn btn-secondary">Last Updated</button>
+                <button onclick="sortCreate()" type="button" class="btn btn-secondary">Created Date</button>
+              </div>
+        </div>
         <div class="col-lg-6 col-md-8">
-            <h1>Browse my projects below:</h1>
+            <h1 id="proj-head">Browse my projects below:</h1>
+           
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon">Search</div>
+                  </div>
+                  <input onkeyup="filter()" type="text" id="search" class="form-control" placeholder="Project Name or Technologies" aria-describedby="btnGroupAddon">
+                </div>
+        <div id="projs">
             {% for project in site.projects %}
                 <br>
-                <div class="container">
+                <div class="container" id="{{project.title}}-{{project.Tech}}">
                     <h3>{{project.title}}</h3>
                     <img class="img-thumbnail rounded" src="assets/imgs/{{project.ImageName}}">
                     <p>{{project.content}}</p>
+                    <span>Created: {{project.dCreate}}&nbsp;&nbsp;&nbsp; Updated: {{project.dUpdate}}</span>
                 </div>
             {%endfor%}
         </div>
+        <div id="date"> 
+            {% assign sorted_projects1 = site.projects | sort: "Update" %}
+            {% for project in sorted_projects1 %}
+                <br>
+                <div class="container" id="{{project.title}}-{{project.Tech}}">
+                    <h3>{{project.title}}</h3>
+                    <img class="img-thumbnail rounded" src="assets/imgs/{{project.ImageName}}">
+                    <p>{{project.content}}</p>
+                    <span>Created: {{project.dCreate}}&nbsp;&nbsp;&nbsp; Updated: {{project.dUpdate}}</span>
+                </div>
+            {%endfor%}
+        </div>
+        <div id="create">
+            {% assign sorted_projects2 = site.projects | sort: "Create" %}
+            {% for project in sorted_projects2 %}
+                <br>
+                <div class="container" id="{{project.title}}-{{project.Tech}}">
+                    <h3>{{project.title}}</h3>
+                    <img class="img-thumbnail rounded" src="assets/imgs/{{project.ImageName}}">
+                    <p>{{project.content}}</p>
+                    <span>Created: {{project.dCreate}}&nbsp;&nbsp;&nbsp; Updated: {{project.dUpdate}}</span>
+                </div>
+            {%endfor%}
+        </div>
+        </div>
     </div>
-</div>
+</div><br><br>
+<script src="filter.js"></script>
